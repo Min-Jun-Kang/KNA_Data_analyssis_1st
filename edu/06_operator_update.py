@@ -95,3 +95,14 @@ print(num1 > num2)  # False
 print(num1 > "num2")
 # TypeError: '>' not supported between instances of 'int' and 'str'
 # int랑 str은 비교연산자로 비교 불가
+
+# 논리연산자
+
+# and / or / not - 논리연산자
+# and: 조건들이 전부 True일 때만 True를 반환
+# print(5 == 5 and 7 == 7) True and True > True
+# or : 조건들 중 하나라도 True면 True 반환
+# print(5 == 5 or 7 != 7) True or Flase > True
+# not : bool값을 반대로 뒤집음
+# print(not True) # False
+# print(not 5 != 5)  # True
