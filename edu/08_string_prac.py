@@ -41,3 +41,14 @@
 # word = "PYTHON"
 
 # print("문자열 뒤집어서 출력 >", word[::-1])
+
+# # 실습 len()으로 길이 확인
+
+# phone_num = "01012345678"
+
+# print("전화번호 길이:", len(phone_num))
+
+# # 실습 .count()로 개수 세기
+
+# word = "a,b,c,d"
+# print("문자열에 포함된 ,의 개수: >", word.count(","))
