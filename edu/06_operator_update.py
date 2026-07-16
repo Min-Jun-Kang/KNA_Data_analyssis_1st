@@ -60,20 +60,38 @@
 # print(7 == 7)  # True
 # print(7 != 7)  # False
 
-# 비교연산자는 문자열 비교도 가능
-print("hello" == "hello")  # True
-print("정상" == "정상")  # True
+# # 비교연산자는 문자열 비교도 가능
+# print("hello" == "hello")  # True
+# print("정상" == "정상")  # True
 
-# 비교연산자를 사용해 문자열을 비교할 때 주의사항
+# # 비교연산자를 사용해 문자열을 비교할 때 주의사항
 
-# 1. 대소문자 구분
-print("hello" == "Hello")  # False
+# # 1. 대소문자 구분
+# print("hello" == "Hello")  # False
 
-# 2. 공백이 있어도 다르다고 판단
-print("정상" == "정상 ")  # False
+# # 2. 공백이 있어도 다르다고 판단
+# print("정상" == "정상 ")  # False
 
-# 부정연산자 != (not)
-# 두 값이 동일한데 !로 인해서 값이 반대로 출력됨
-print("hello" != "hello")  # False
-print("hello" != "hello ")  # True
-print("hello" != "Hello")  # True
+# # 부정연산자 != (not)
+# # 두 값이 동일한데 !로 인해서 값이 반대로 출력됨
+# print("hello" != "hello")  # False
+# print("hello" != "hello ")  # True
+# print("hello" != "Hello")  # True
+
+# # 변수에 문자열을 할당하고, 변수로 문자열 비교
+# hello = "hi"
+# print(hello == "hi")  # True
+
+# # 위 비교에서 hello는 따옴표로 감싸지지 않아서 "변수"로 취급
+# # 만약 hello를 "hello"와 같이 따옴표로 감싸면
+# # string(문자열)로 인식해서 변수 취급을 하지 않음
+# # ex) : "hello"와 "hi"를 비교하는 것
+
+# 변수로 비교연산자 사용
+num1 = 123
+num2 = 456
+
+print(num1 > num2)  # False
+print(num1 > "num2")
+# TypeError: '>' not supported between instances of 'int' and 'str'
+# int랑 str은 비교연산자로 비교 불가
