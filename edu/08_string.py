@@ -185,3 +185,201 @@
 # at = email.find("@")  # @ 위치의 index인 4가 할당 > int형
 # user_id = email[:at]  # @ 앞까지 문자열 출력
 # print(user_id)
+
+# # SQE-00Q8이라는 설비의 SQE만 뽑아내기 (find와 슬라이싱 사용)
+# sqe = "SQE-00Q8"
+
+# sqe_index = sqe.find("SQE")
+# print(sqe_index)  # 0 출력
+
+
+# sqe_index = sqe.find("-")
+# print(sqe_index)  # 3 출력
+# sqe_fin = sqe[:sqe_index]  # 0~2 문자열 출력
+# print(sqe_fin)
+
+# index() - 위치 찾기
+# 사용법은 find와 동일, 없을 때 오류 출력(실행이 멈춘다)
+
+# email = "zhfeps123@naver.com"
+# at = email.index("@")  # 9 출력
+# print(at)
+
+# print(email[0:at])  # @전 부분 출력
+# print(email[at])  # @전 부분 출력, 위와 동일
+# print(email[at:])  # @포함되어서 출력
+# print(email[at + 1 :])  # @다음부터 출력, 도매인부터 출력
+
+# # SQE-00Q8이라는 설비의 SQE만 뽑아내기 (index 사용)
+# sqe = "SQE-00Q8"
+
+# sqe_index = sqe.index("-")
+# print(sqe_index)  # 3 출력
+# sqe_sli = sqe[:sqe_index]  # 0~2 문자열 출력
+# print(sqe_sli)
+# # index 사용 시 오류가 나면 해당 문자가 문자열에 없다.
+
+# startswith() - 시작 확인
+# 특정 문자열로 시작하는지 검사
+# True랑 False로 반환 -> boolean 타입
+
+# # EQP로 시작하는지 검사
+# print("EQP-001".startswith("EQP"))  # True
+# print("SQP-001".startswith("EQP"))  # False
+
+# # 변수 활용해서 검사
+# eqp = "EQP"
+# print("EQP-001".startswith(eqp))  # True
+# print("SQP-001".startswith(eqp))  # False
+
+
+# # # endswith() - 끝 확인
+# # # 특정 문자열로 끝나는지 검사
+# # # True랑 False로 반환 -> boolean 타입
+
+# str2 = "월요일입니다! 여러분은 할 수 있어요!"
+
+# print(str2.endswith("!"))  # True
+# print(str2.endswith("!"))  # True
+# print(str2.endswith("음"))  # False
+# print(str2.endswith("월요일입니다! 여러분은 할 수 있어요!"))  # True
+# print(str2.endswith("월요일입니다! 여러분은 할 수 있어요! "))  # False
+# print(str2.endswith(" 월요일입니다! 여러분은 할 수 있어요!"))  # False
+# print(str2.endswith("월요일입니다!\t 여러분은 할 수 있어요!"))  # False
+
+# # 완전히 같아야만 True를 출력한다.
+
+
+# .으로 연결하면 "매서드", 문자열이나 int, float처럼 특정 자료형(객체) 내부에 포함된 기능
+# () -> 함수, 개발자가 직접 선언하지 않았다면 기본으로 제공되는 함수 "내장 함수"
+
+# upper() -> 단어를 대문자로 다 바꾸는 매소드
+
+# alp = "abcdefg"
+# print(alp)  # abcdefg
+# alp.upper()
+# print(alp)  # abcdefg -> 재할당을 하지 않았기에 그대로 출력된다.
+
+# alp = alp.upper()
+# print(alp)
+
+# lower() -> 단어를 소문자로 바꾸는 매소드
+
+# capitalize(), title() -> 한 글자만 대문자로 바꾸는 매소드
+# capitalize() -> 문자열의 첫 글자만 대문자로 바뀜
+# title() -> 문자열에서 공백 기준 첫 단어의 첫 글자가 대문자로 바뀜
+
+# isupper()·islower() -> 모두 대문자/소문자인지 참·거짓으로 확인
+
+# 공백 제거
+
+# strip() -> 앞뒤 공백 제거, 중간에 있는 공백은 제거하지 않음
+
+# lstrip()은 왼쪽, rstrip()은 오른쪽만 공백 제거
+
+# raw = "         정상          "
+
+# print(raw.strip())  # 양쪽 공백 제거
+# print(raw.lstrip())  # 왼쪽 공백 제거
+# print(raw.rstrip())  # 오른쪽 공백 제거
+
+# # strip()으로 문자 제거
+
+# word = " ===정 상=== "
+# print(word.strip("= "))
+
+# # 갯수 상관없이 지정한 문자 삭제
+# # strip 자체가 공백을 지우는 것
+# # 결국 기억해야할 것은 문자열 앞 뒤만 제거한다는 것
+# # strip("?"), ?는 문자열 -> 이 때 만약 ?가 문자열 양 쪽 끝에 없다면 실행되지않고 문자열 자체가 출력된다.
+
+# # 메서드연결해서쓰기(체이닝) -> 여러 작업을 매서드 연결로 진행하는 것
+# # -> 대신 순서가 중요함
+
+# raw = "   ADFASDddfdf    "
+
+# # 체이닝 x
+
+# raw1 = raw.strip()
+# raw2 = raw1.lower()
+# print(raw2)
+
+# # 체이닝 o
+
+# chain = raw.strip().lower()
+# print(chain)
+
+# # 변수에 할당 안하고 가능
+# print(raw.strip().lower())
+
+# # 기존 변수에도 재할당 가능
+# raw = raw.strip().lower()
+# print(raw)
+
+
+# # 단어 치환
+
+# # 특정 문자열을 제거하거나 치환할 때 사용
+# # 제거할 때는 인자의 두 번째를 ""(빈 문자열)로 작성
+# print(
+#     "정 상 가 동".replace(" ", "")
+# )  # 정상가동 출력 -> 첫번째 인자(바꾸고 싶은 문자열), 두번째 인자(바꿀 내용 문자열)
+# print(
+#     "  정 상 가 동  ".replace(" ", "")
+# )  # 정상가동 출력 -> 문자열 안에서의 공백을 다 바꾼다.
+# print("정 상 가 동".replace("  ", ""))  # 정 상 가 동, 공백이 두칸인 경우만 바꾼다.
+
+# word = "설비 정상 가동"
+# print(word.replace("정상", "점검"))
+
+# # replace() 체이닝
+# num = "       010-2232-2213    "
+# num = num.replace(" ", "").replace("-", "")  # 공백과 - 제거
+# print(num)
+
+# # List -> 리스트 : 여러 값을 순서대로 담는 그릇
+# # split() -> 공백을 기준으로 나눠서 리스트로 출력
+
+# # print("에스프레소 아메리카노 카페라테".split())
+
+# # # 구분자를 정하고 싶은 경우 -> split("?") : 해당 구분자를 적으면 된다.
+
+# fruits = "딸기, 거봉, 키위, 수박"
+# # print(fruits.split(","))
+
+# # 리스트의 인덱스
+# # fruits_list = fruits.split(",")
+# # print(fruits_list[1])  # 인덱스는 0번 부터 시작
+# # print(fruits_list[3])
+# # print(fruits_list[-1])  # -1을 쓰면 마지막 리스트의 마지막 값 출력
+
+# # split 횟수 제한
+# fruits_list1 = fruits.split(",", 1)
+
+# print(fruits_list1)
+
+# join() : 리스트를 하나의 문자열로 합치는 기능
+# "구분자".join(리스트)으로 작성해야함
+
+# fruits_list = ["딸기", "거봉", "키위", "사쿠란보"]
+
+# print("-".join(fruits_list))  # 딸기-거봉-키위-사쿠란보
+# print(",".join(fruits_list))  # 딸기,거봉,키위,사쿠란보
+# print(" ".join(fruits_list))  # 딸기 거봉 키위 사쿠란보
+
+# # print함수의 sep, end 매소드
+
+# print("2026", "07", "27")  # 2026 07 27
+
+# # sep 속성을 사용하면 구분을 공백이 아닌 특정 문자열로 가능
+# print("2026", "07", "27", sep="사랑해")  # 2026사랑해07사랑해27
+
+# # end 속성 사용 시 출력문 마지막에 해당 문자열 삽입
+# print("안녕", "하세")  # 안녕 하세
+# print("안녕", "하세", end="요")  # 안녕 하세요
+
+# print("안녕", "하세", end="요" + "이렇게")  # + 연산자를 이용하면 이어쓰기 가능
+
+# # print()문은 기본적으로 sep = " ", end = "\n"
+
+# f string
