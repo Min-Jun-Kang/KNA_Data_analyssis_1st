@@ -160,3 +160,36 @@
 
 # senten = "1, NORMAL ,25.3"
 # print(senten.split(",")[1].strip().lower())
+
+
+# # 실습 / f string
+
+# name = "PUMP_A"
+# temper = 87
+
+# print(f"설비 {name} 온도 {temper}도")
+# print("설비 " + name + " 온도 " + str(temper) + "도")
+
+# # 실습 / f-string 안에서 계산하기
+
+# mat = 88
+# eng = 92
+# kor = 90
+
+# print(f"세 과목 평균 점수는 {(mat+eng+kor)/3}점 입니다.")
+
+# # 실습 / 반올림
+
+# num999 = 87.456
+
+# print(f"{num999:.1f}")
+# print(f"{num999:.2f}")
+
+# # 실습 / 센서 로그 한줄 정리
+
+# log = " 5, sensor_2, WARNING, 0.78912 "
+# log_list = log.strip().split(", ")
+# print(log_list)
+# print(
+#     f"[센서 {log_list[1]}] 상태 {log_list[2].lower()} 측정값 {float(log_list[-1]):.2f}"
+# )
